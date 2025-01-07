@@ -1,12 +1,15 @@
 import os
 import mlflow
 from loguru import logger
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def load_model():
     logger.info('reading model...')
-    MLFLOW_TRACKING_URI = 'https://dagshub.com/mcoelho5446/my-first-repo.mlflow'
-    MLFLOW_TRACKING_USERNAME = 'mcoelho5446'
-    MLFLOW_TRACKING_PASSWORD = '82f541e12472ccd9580c67f05b2da3680c830f9d'
+    MLFLOW_TRACKING_URI = os.getenv('MLFLOW_TRACKING_URI')
+    MLFLOW_TRACKING_USERNAME = os.getenv('MLFLOW_TRACKING_USERNAME')
+    MLFLOW_TRACKING_PASSWORD = os.getenv('MLFLOW_TRACKING_PASSWORD')
 
     os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
     os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
