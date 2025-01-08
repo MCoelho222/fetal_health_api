@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from model import load_model
+from app.model import load_model
 from contextlib import asynccontextmanager
 
-from endpoints import router
+from app.endpoints import router
 
 
 @asynccontextmanager

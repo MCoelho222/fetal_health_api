@@ -2,8 +2,8 @@ import numpy as np
 from loguru import logger
 from fastapi import APIRouter, Depends
 
-from helpers import get_model
-from data_types import FetalHealthData
+from app.helpers import get_model
+from app.data_types import FetalHealthData
 
 router = APIRouter()
 
